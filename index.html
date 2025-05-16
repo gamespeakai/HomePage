@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GameSpeak AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Speak to Me</title>
   <style>
     body {
       margin: 0;
@@ -12,10 +12,20 @@
       font-family: Arial, sans-serif;
     }
     header {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 2.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      background-color: #111;
+      font-size: 1.5rem;
       font-weight: bold;
+      cursor: pointer;
+    }
+    .page {
+      display: none;
+    }
+    .active {
+      display: block;
     }
     .carousel {
       display: flex;
@@ -40,7 +50,7 @@
       text-align: center;
       padding: 0 1rem;
     }
-    .contact button {
+    .contact button, .download button {
       padding: 0.75rem 1.5rem;
       background-color: white;
       color: black;
@@ -48,77 +58,122 @@
       border-radius: 4px;
       cursor: pointer;
     }
-    .contact button:hover {
+    .contact button:hover, .download button:hover {
       background-color: #ddd;
     }
   </style>
 </head>
 <body>
-  <header>GameSpeak AI</header>
 
-  <section class="carousel">
-    <div class="carousel-item">
-      <h2>Use Cases</h2>
-      <iframe width="100%" height="315"
-        src="https://www.youtube.com/embed/5M45eQZS5vk"
-        title="Use Cases" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
-    <div class="carousel-item">
-      <h2>What is it?</h2>
-      <iframe width="100%" height="315"
-        src="https://www.youtube.com/embed/U3-5icnWHx8"
-        title="What is it?" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
-    <div class="carousel-item">
-      <h2>How to use it?</h2>
-      <iframe width="100%" height="315"
-        src="https://www.youtube.com/embed/UpjChuvuetc"
-        title="How to use it?" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
+  <header>
+    <div onclick="showPage('speak')">Speak to Me</div>
+    <div onclick="showPage('gamespeak')">GameSpeak AI</div>
+  </header>
+
+  <!-- Speak to Me Page (Default) -->
+  <section id="speak" class="page active">
+    <section class="carousel">
+      <div class="carousel-item">
+        <h2>What is it?</h2>
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/Yy7BFYpqiCA?si=CkWKxRCuMsqMLr5r"
+          title="What is it?" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="carousel-item">
+        <h2>How to use it?</h2>
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/UpjChuvuetc"
+          title="How to use it?" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section class="description">
+      <h2>What is Speak to Me?</h2>
+      <p>
+        This page introduces the core features of our voice interaction system. Watch the videos to learn what it is and how to use it.
+      </p>
+    </section>
+
+    <section class="download">
+      <div style="text-align: center;">
+        <a href="https://drive.google.com/drive/folders/1M3XIw8hfIb6dVnItyl8hvgu0at1kzg-H?usp=sharing" target="_blank">
+          <button>🎤 Download Speak to Me</button>
+        </a>
+      </div>
+    </section>
   </section>
-  
 
-  <section class="description">
-    <h2>What is GameSpeak AI?</h2>
-    <p>
-      GameSpeak AI is an AI-powered voice commentary tool for video games. Whether you’re exploring in Minecraft or running the court in a sports sim, our tech brings immersive, real-time narration to your gameplay.
-    </p>
+  <!-- GameSpeak AI Page (Unchanged) -->
+  <section id="gamespeak" class="page">
+    <section class="carousel">
+      <div class="carousel-item">
+        <h2>Use Cases</h2>
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/5M45eQZS5vk"
+          title="Use Cases" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="carousel-item">
+        <h2>What is it?</h2>
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/U3-5icnWHx8"
+          title="What is it?" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="carousel-item">
+        <h2>How to use it?</h2>
+        <iframe width="100%" height="315"
+          src="https://www.youtube.com/embed/UpjChuvuetc"
+          title="How to use it?" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section class="description">
+      <h2>What is GameSpeak AI?</h2>
+      <p>
+        GameSpeak AI is an AI-powered voice commentary tool for video games. Whether you’re exploring in Minecraft or running the court in a sports sim, our tech brings immersive, real-time narration to your gameplay.
+      </p>
+    </section>
+
+    <section class="download">
+      <div style="text-align: center;">
+        <a href="https://drive.google.com/drive/folders/1uZ7MpF3vkKW8HqJOJTfNR3c4WnGfBJHk?usp=sharing" target="_blank">
+          <button>🎮 Download MVP</button>
+        </a>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>Get in Contact</h2>
+      <p>Interested in collaborating or learning more?</p>
+      <p>ai.gamespeak@gmail.com</p>
+    </section>
   </section>
 
-<section class="download">
-  <div style="text-align: center; margin-top: 2rem;">
-    <a href="https://drive.google.com/drive/folders/1uZ7MpF3vkKW8HqJOJTfNR3c4WnGfBJHk?usp=sharing" target="_blank">
-      <button style="
-        padding: 0.75rem 1.5rem;
-        background-color: white;
-        color: black;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 1rem;
-      ">
-        🎮 Download MVP
-      </button>
-    </a>
-  </div>
-</section>
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+      });
+      document.getElementById(pageId).classList.add('active');
+    }
 
+    // Default to Speak to Me
+    window.onload = () => showPage('speak');
+  </script>
 
-
-
-  <section class="contact">
-    <h2>Get in Contact</h2>
-    <p>Interested in collaborating or learning more?</p>
-    <p>ai.gamespeak@gmail.com</p>
-  </section>
 </body>
 </html>
